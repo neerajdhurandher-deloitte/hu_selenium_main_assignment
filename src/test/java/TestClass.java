@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 public class TestClass {
 
-    public static WebDriver driver;
     public static MainClass mainClass;
     public static ArrayList<Customer> customerList;
 
@@ -23,10 +22,8 @@ public class TestClass {
 
 
     @BeforeTest
-    public  WebDriver initializeSetup(){
+    public  void initializeSetup(){
         System.setProperty("webdriver.chrome.driver","C:\\Users\\ndhurandher\\Downloads\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
         mainClass = new MainClass();
         readXmlFile("src/main/java/Customer/customerDetails.xlsx");
         try {
@@ -34,7 +31,6 @@ public class TestClass {
         }catch (Exception e){
             log.error(e.getMessage());
         }
-        return driver;
     }
 
     private void readXmlFile(String path) {
@@ -53,90 +49,45 @@ public class TestClass {
     @AfterTest
     public  void closeBrowser(){
         log.info("Web driver closed");
-        driver.close();
     }
 
-    @Test
-    public  void AddCustomerTest() throws InterruptedException {
-        try {
-            mainClass.launch(driver);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        mainClass.ManagerLogIn();
-
-        Customer customer1 = customerList.get(0);
-        mainClass.AddCustomer(customer1.getFirstName(), customer1.getLastName(), customer1.getPinCode());
-        Customer customer2 = customerList.get(1);
-        mainClass.AddCustomer(customer2.getFirstName(), customer2.getLastName(), customer2.getPinCode());
-
-        mainClass.openAccount(6, 3);
-        mainClass.openAccount(7, 3);
-
-        mainClass.goToHomePage();
-
-    }
-
-    @Test
-    public  void DeleteCustomerTest() throws InterruptedException {
-        try {
-            mainClass.launch(driver);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        mainClass.ManagerLogIn();
-
-        Customer customer1 = customerList.get(0);
-        mainClass.AddCustomer(customer1.getFirstName(), customer1.getLastName(), customer1.getPinCode());
-
-        boolean customerExits;
-        try {
-            customerExits = mainClass.searchCustomer(customer1.getFirstName(), customer1.getLastName());
-            if (customerExits) {
-                mainClass.deleteCustomer();
-                log.info(customer1.getFirstName() + " " +customer1.getLastName()+ "'s account has been deleted");
-            }
-        }catch (CostumeExceptions e){
-            log.error(e.getExceptionMsg());
-        }
-
-        mainClass.goToHomePage();
-
-    }
+//    @Test
+//    public  void AddCustomerTest() throws InterruptedException {
+//        try {
+//            mainClass.launch();
+//        } catch (Exception e) {
+//            log.error(e.getMessage());
+//        }
+//        mainClass.ManagerLogIn();
+//
+//        Customer customer1 = customerList.get(0);
+//        mainClass.AddCustomer(customer1.getFirstName(), customer1.getLastName(), customer1.getPinCode());
+//        Customer customer2 = customerList.get(1);
+//        mainClass.AddCustomer(customer2.getFirstName(), customer2.getLastName(), customer2.getPinCode());
+//
+//        mainClass.openAccount(6, 3);
+//        mainClass.openAccount(7, 3);
+//
+//        mainClass.goToHomePage();
+//
+//        mainClass.closeWindow();
+//
+//    }
 
     @Test
-    public  void DeleteCustomerNonExistsTest() throws InterruptedException {
+    public void DepositWithdraw() throws InterruptedException {
         try {
-            mainClass.launch(driver);
+            mainClass.launch();
         } catch (Exception e) {
             log.error(e.getMessage());
         }
         mainClass.ManagerLogIn();
-
-        Customer customer1 = customerList.get(3);
+        Customer customer1 = customerList.get(2);
         mainClass.AddCustomer(customer1.getFirstName(), customer1.getLastName(), customer1.getPinCode());
-
-        boolean customerExits;
-        try {
-            customerExits = mainClass.searchCustomer(customer1.getFirstName(), customer1.getLastName());
-            if (customerExits) {
-                mainClass.deleteCustomer();
-                log.info(customer1.getFirstName() + " " +customer1.getLastName()+ "'s account has been deleted");
-            }
-        }catch (CostumeExceptions e){
-            log.error(e.getExceptionMsg());
-        }
-
+        mainClass.openAccount(6, 3);
         mainClass.goToHomePage();
 
-    }
-
-//    @Test
-    public void bDepositWithdraw() throws InterruptedException {
-
-        mainClass.openAccount(6, 3);
-
-        logIn();
+        logIn(customer1);
 
         mainClass.deposit(140);
 
@@ -146,12 +97,27 @@ public class TestClass {
             log.error(e.getMessage());
         }
 
+        mainClass.closeWindow();
+
     }
 
     @Test
-    public void cMaxWithdraw() throws InterruptedException {
+    public void MaxWithdraw() throws InterruptedException {
+        try {
+            mainClass.launch();
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
 
-        logIn();
+        mainClass.ManagerLogIn();
+
+        Customer customer1 = customerList.get(3);
+        mainClass.AddCustomer(customer1.getFirstName(), customer1.getLastName(), customer1.getPinCode());
+        mainClass.openAccount(6, 3);
+
+        mainClass.goToHomePage();
+
+        logIn(customer1);
 
         mainClass.deposit(100);
 
@@ -161,28 +127,33 @@ public class TestClass {
             log.error(e.getMessage());
         }
 
+        mainClass.closeWindow();
+
     }
 
     @Test
-    public void changeAccount() throws InterruptedException {
+    public void ChangeAccount() throws InterruptedException {
 
         try {
-            mainClass.launch(driver);
+            mainClass.launch();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.error(e.getMessage());
         }
         mainClass.ManagerLogIn();
 
-        Customer customer1 = customerList.get(0);
+        Customer customer1 = customerList.get(4);
         mainClass.AddCustomer(customer1.getFirstName(), customer1.getLastName(), customer1.getPinCode());
-        mainClass.AddCustomer(customer1.getFirstName(), customer1.getLastName(), customer1.getPinCode());
+        mainClass.openAccount(6, 3);
+        mainClass.openAccount(6, 3);
+
 
         mainClass.goToHomePage();
 
 
 
-        logIn();
-        mainClass.changeAccount(1);
+        logIn(customer1);
+
+        mainClass.changeAccount(2);
 
         mainClass.deposit(100);
 
@@ -192,16 +163,75 @@ public class TestClass {
             log.error(e.getMessage());
         }
 
+        mainClass.closeWindow();
+
     }
 
+//    @Test
+//    public  void DeleteCustomerTest() throws InterruptedException {
+//        try {
+//            mainClass.launch();
+//        } catch (Exception e) {
+//            log.error(e.getMessage());
+//        }
+//        mainClass.ManagerLogIn();
+//
+//        Customer customer1 = customerList.get(5);
+//        mainClass.AddCustomer(customer1.getFirstName(), customer1.getLastName(), customer1.getPinCode());
+//
+//        boolean customerExits;
+//        try {
+//            customerExits = mainClass.searchCustomer(customer1.getFirstName(), customer1.getLastName());
+//            if (customerExits) {
+//                mainClass.deleteCustomer();
+//                log.info(customer1.getFirstName() + " " +customer1.getLastName()+ "'s account has been deleted");
+//            }
+//        }catch (CostumeExceptions e){
+//            log.error(e.getExceptionMsg());
+//        }
+//
+//        mainClass.goToHomePage();
+//
+//        mainClass.closeWindow();
+//
+//    }
+//
+//    @Test
+//    public  void DeleteCustomerNonExistsTest() throws InterruptedException {
+//        try {
+//            mainClass.launch();
+//        } catch (Exception e) {
+//            log.error(e.getMessage());
+//        }
+//        mainClass.ManagerLogIn();
+//
+//        Customer customer1 = customerList.get(6);
+//        mainClass.AddCustomer(customer1.getFirstName(), customer1.getLastName(), customer1.getPinCode());
+//
+//        boolean customerExits;
+//        try {
+//            customerExits = mainClass.searchCustomer(customer1.getFirstName(), customer1.getLastName());
+//            if (customerExits) {
+//                mainClass.deleteCustomer();
+//                log.info(customer1.getFirstName() + " " +customer1.getLastName()+ "'s account has been deleted");
+//            }
+//        }catch (CostumeExceptions e){
+//            log.error(e.getExceptionMsg());
+//        }
+//
+//        mainClass.goToHomePage();
+//
+//        mainClass.closeWindow();
+//
+//    }
 
 
 
-    public void logIn() throws InterruptedException {
-        Customer customer1 = customerList.get(1);
+
+    public void logIn(Customer customer) throws InterruptedException {
 
         try {
-            mainClass.logIn(customer1.getFirstName()+" "+customer1.getLastName());
+            mainClass.logIn(customer.getFirstName()+" "+customer.getLastName());
         }catch (CostumeExceptions e){
             log.error(e.getExceptionMsg());
         }

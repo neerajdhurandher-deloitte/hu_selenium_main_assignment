@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import javax.imageio.ImageIO;
@@ -25,11 +26,13 @@ public class MainClass {
     Logger log = Logger.getLogger(MainClass.class);
 
 
-    public void launch(WebDriver driver) throws InterruptedException {
-        this.driver = driver;
+    public void launch() throws InterruptedException {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();;
         driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/");
         actionEvents = new ActionEvents(driver);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Thread.sleep(2000);
         log.info("web browser initialized");
         log.trace("browser opened");
 
@@ -39,28 +42,32 @@ public class MainClass {
         actionEvents.tagXpathText("button","Bank Manager Login");
         log.info("Manager login");
 
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Thread.sleep(2000);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
     }
     public void AddCustomer(String first_name, String last_name, String post_code) throws InterruptedException {
 
         actionEvents.tagXpathIdentifier("button","ng-class","btnClass1");
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Thread.sleep(2000);
         actionEvents.inputXpath("placeholder","First Name",first_name);
         actionEvents.inputXpath("placeholder","Last Name",last_name);
         actionEvents.inputXpath("placeholder","Post Code",post_code);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Thread.sleep(2000);
 
         actionEvents.tagXpathText("button","Add Customer");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Thread.sleep(2000);
 
         actionEvents.alertBoxOk();
 
         log.info("customer added");
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Thread.sleep(2000);
 
 
     }
@@ -68,20 +75,24 @@ public class MainClass {
     public void openAccount(int userIndex,int currencyIndex) throws InterruptedException {
 
         actionEvents.tagXpathIdentifier("button","ng-class","btnClass2");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Thread.sleep(1000);
 
         dropDownSelection("userSelect",userIndex);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Thread.sleep(1000);
 
         dropDownSelection("currency",currencyIndex);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Thread.sleep(1000);
 
         actionEvents.tagXpathText("button","Process");
         actionEvents.alertBoxOk();
 
         log.info("customer account created");
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Thread.sleep(2000);
 
     }
 
@@ -101,11 +112,13 @@ public class MainClass {
 
         actionEvents.tagXpathIdentifier("button","ng-class","btnClass3");
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Thread.sleep(2000);
 
         actionEvents.inputXpath("placeholder","Search Customer",customerFirstName);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        Thread.sleep(2000);
 
         WebElement baseTable = driver.findElement(By.cssSelector("table[class*='table table-bordered table-striped']"));
 
@@ -125,7 +138,12 @@ public class MainClass {
 
     public void deleteCustomer(){
         WebElement baseTable = driver.findElement(By.cssSelector("table[class*='table table-bordered table-striped']"));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        try {
+            Thread.sleep(2000);
+        }catch (Exception e){
+            log.error(e.getMessage());
+        }
         baseTable.findElement(By.xpath("//table/tbody/tr[1]/td[4]")).findElement(By.xpath("//button[text() = 'Delete']")).click();
     }
 
@@ -217,7 +235,9 @@ public class MainClass {
 
         actionEvents.tagXpathText("button","Withdraw");
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        Thread.sleep(2000);
+
 
         if(amount > previousBalance){
 
@@ -260,4 +280,7 @@ public class MainClass {
         ImageIO.write(image, "png", new File(path+fileName+".png"));
     }
 
+    public void closeWindow() {
+        driver.close();
+    }
 }

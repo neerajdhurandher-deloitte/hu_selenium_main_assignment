@@ -25,28 +25,25 @@ td,th {border:1px solid #009;padding:.25em .5em}
 <body>
 <table cellspacing="0" cellpadding="0" class="testOverview">
 <tr><th>Test</th><th>Methods<br/>Passed</th><th>Scenarios<br/>Passed</th><th># skipped</th><th># failed</th><th>Total<br/>Time</th><th>Included<br/>Groups</th><th>Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em"><a href="#t1">test</a></td><td class="numi">3</td><td class="numi">3</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">20.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t1">test</a></td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">3</td><td class="numi">61.8 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="methodOverview" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr id="t1"><th colspan="5">test &#8212; failed (configuration methods)</th></tr>
-<tr class="failedodd"><td>TestClass</td><td><a href="#m1"><b>closeBrowser</b>  </a></td><td class="numi">1</td><td>1648537517511</td><td class="numi">4118</td></tr>
-<tr><th colspan="5">test &#8212; failed</th></tr>
-<tr class="failedodd"><td>TestClass</td><td><a href="#m2"><b>cMaxWithdraw</b>  </a></td><td class="numi">1</td><td>1648537513771</td><td class="numi">3711</td></tr>
-<tr><th colspan="5">test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="3">TestClass</td><td><a href="#m3"><b>AddCustomerTest</b>  </a></td><td class="numi">1</td><td>1648537506391</td><td class="numi">5380</td></tr><tr class="passedodd"><td><a href="#m4"><b>DeleteCustomerNonExistsTest</b>  </a></td><td class="numi">1</td><td>1648537511773</td><td class="numi">1136</td></tr><tr class="passedodd"><td><a href="#m5"><b>DeleteCustomerTest</b>  </a></td><td class="numi">1</td><td>1648537512910</td><td class="numi">860</td></tr>
+<tr id="t1"><th colspan="5">test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="3">TestClass</td><td><a href="#m1"><b>ChangeAccount</b>  </a></td><td class="numi">1</td><td>1648542892918</td><td class="numi">30114</td></tr><tr class="failedodd"><td><a href="#m2"><b>DepositWithdraw</b>  </a></td><td class="numi">1</td><td>1648542923048</td><td class="numi">23078</td></tr><tr class="failedodd"><td><a href="#m3"><b>MaxWithdraw</b>  </a></td><td class="numi">1</td><td>1648542946126</td><td class="numi">4949</td></tr>
 </table>
 <h1>test</h1>
-<h2 id="m1">TestClass:closeBrowser</h2>
+<h2 id="m1">TestClass:ChangeAccount</h2>
 <div>
-<div class="stacktrace">org.openqa.selenium.WebDriverException: chrome not reachable
+<div class="stacktrace">org.openqa.selenium.ElementNotInteractableException: element not interactable
   (Session info: chrome=99.0.4844.82)
 Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
 System info: host: &apos;USBLRNDHURAND2&apos;, ip: &apos;192.168.75.237&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2f9c6d49df54e53d5c0eb3b7393d2cad, close {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\NDHURA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52123}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52123/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 2f9c6d49df54e53d5c0eb3b7393d2cad
+Command: [db966c88842fd20539902d56673e1611, clickElement {id=a7af92f2-13bb-4808-8470-6e048b9ebd1c}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\NDHURA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64976}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64976/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (db966c88842fd20539902d56673e1611)] -&gt; xpath: //select[@id=&apos;accountSelect&apos;]]
+Session ID: db966c88842fd20539902d56673e1611
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
@@ -54,28 +51,30 @@ Session ID: 2f9c6d49df54e53d5c0eb3b7393d2cad
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:613)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
-	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:443)
-	at TestClass.closeBrowser(TestClass.java:53)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Functionality.MainClass.dropDownSelection(MainClass.java:102)
+	at Functionality.MainClass.changeAccount(MainClass.java:264)
+	at TestClass.ChangeAccount(TestClass.java:151)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 20 stack frames</div>
+... Removed 23 stack frames</div>
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">TestClass:cMaxWithdraw</h2>
+<h2 id="m2">TestClass:DepositWithdraw</h2>
 <div>
-<div class="stacktrace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
+<div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[text() = &apos;Customer Login&apos;]&quot;}
   (Session info: chrome=99.0.4844.82)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
 System info: host: &apos;USBLRNDHURAND2&apos;, ip: &apos;192.168.75.237&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2f9c6d49df54e53d5c0eb3b7393d2cad, findElement {using=xpath, value=//button[text() = &apos;Deposit&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\NDHURA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52123}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52123/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 2f9c6d49df54e53d5c0eb3b7393d2cad
+Command: [d9c050d120437cd13c48b85cc2bc3ab4, findElement {using=xpath, value=//button[text() = &apos;Customer Login&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\NDHURA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:65015}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:65015/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d9c050d120437cd13c48b85cc2bc3ab4
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
@@ -87,9 +86,9 @@ Session ID: 2f9c6d49df54e53d5c0eb3b7393d2cad
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:382)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at Utill.ActionEvents.tagXpathText(ActionEvents.java:26)
-	at Functionality.MainClass.deposit(MainClass.java:182)
-	at TestClass.cMaxWithdraw(TestClass.java:151)
+	at Functionality.MainClass.logIn(MainClass.java:152)
+	at TestClass.logIn(TestClass.java:229)
+	at TestClass.DepositWithdraw(TestClass.java:89)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
@@ -98,10 +97,37 @@ Session ID: 2f9c6d49df54e53d5c0eb3b7393d2cad
 ... Removed 23 stack frames</div>
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">TestClass:AddCustomerTest</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m4">TestClass:DeleteCustomerNonExistsTest</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m5">TestClass:DeleteCustomerTest</h2>
+<h2 id="m3">TestClass:MaxWithdraw</h2>
+<div>
+<div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@ng-class = &apos;btnClass1&apos;]&quot;}
+  (Session info: chrome=99.0.4844.82)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
+System info: host: &apos;USBLRNDHURAND2&apos;, ip: &apos;192.168.75.237&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [582465fe3545626604f4ad50965524cc, findElement {using=xpath, value=//button[@ng-class = &apos;btnClass1&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\NDHURA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:65056}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:65056/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 582465fe3545626604f4ad50965524cc
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:382)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at Utill.ActionEvents.tagXpathIdentifier(ActionEvents.java:30)
+	at Functionality.MainClass.AddCustomer(MainClass.java:51)
+	at TestClass.MaxWithdraw(TestClass.java:112)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 23 stack frames</div>
+</div>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

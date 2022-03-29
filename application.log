@@ -1,17 +1,13 @@
-2022-03-29 12:35:07,967  INFO [TestNG-tests-1] LogTest:33 - web browser initialized
-2022-03-29 12:35:07,972 TRACE [TestNG-tests-1] LogTest:34 - browser opened
-2022-03-29 12:35:09,062  INFO [TestNG-tests-1] LogTest:40 - Manager login
-2022-03-29 12:35:10,104  INFO [TestNG-tests-1] LogTest:61 - customer added
-2022-03-29 12:35:10,288  INFO [TestNG-tests-1] LogTest:61 - customer added
-2022-03-29 12:35:11,210  INFO [TestNG-tests-1] LogTest:82 - customer account created
-2022-03-29 12:35:11,708  INFO [TestNG-tests-1] LogTest:82 - customer account created
-2022-03-29 12:35:11,862  INFO [TestNG-tests-1] LogTest:33 - web browser initialized
-2022-03-29 12:35:11,863 TRACE [TestNG-tests-1] LogTest:34 - browser opened
-2022-03-29 12:35:11,928  INFO [TestNG-tests-1] LogTest:40 - Manager login
-2022-03-29 12:35:12,212  INFO [TestNG-tests-1] LogTest:61 - customer added
-2022-03-29 12:35:12,797  INFO [TestNG-tests-1] LogTest:118 - Customer Abhishek Kumar is available
-2022-03-29 12:35:12,978  INFO [TestNG-tests-1] LogTest:33 - web browser initialized
-2022-03-29 12:35:12,978 TRACE [TestNG-tests-1] LogTest:34 - browser opened
-2022-03-29 12:35:13,046  INFO [TestNG-tests-1] LogTest:40 - Manager login
-2022-03-29 12:35:13,356  INFO [TestNG-tests-1] LogTest:61 - customer added
-2022-03-29 12:35:13,626  INFO [TestNG-tests-1] LogTest:118 - Customer Aman Sahu is available
+2022-03-29 14:15:40,467  INFO [main] TestClass:40 - xlsx read
+2022-03-29 14:15:50,023  INFO [main] MainClass:36 - web browser initialized
+2022-03-29 14:15:50,023 TRACE [main] MainClass:37 - browser opened
+2022-03-29 14:15:50,096  INFO [main] MainClass:43 - Manager login
+2022-03-29 14:15:58,559  INFO [main] MainClass:67 - customer added
+2022-03-29 14:16:04,410  INFO [main] MainClass:92 - customer account created
+2022-03-29 14:16:09,828  INFO [main] MainClass:221 - balance : - 0
+2022-03-29 14:16:10,429  INFO [main] MainClass:221 - balance : - 100
+2022-03-29 14:16:10,430  INFO [main] MainClass:204 - Deposit successfully
+2022-03-29 14:16:12,464  INFO [main] MainClass:221 - balance : - 100
+2022-03-29 14:16:12,492  INFO [main] MainClass:221 - balance : - 100
+2022-03-29 14:16:17,877  INFO [main] MainClass:245 - error msg displayed
+2022-03-29 14:16:17,983  INFO [main] TestClass:51 - Web driver closed
