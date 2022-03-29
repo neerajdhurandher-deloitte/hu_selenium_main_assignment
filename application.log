@@ -1,0 +1,17 @@
+2022-03-29 12:35:07,967  INFO [TestNG-tests-1] LogTest:33 - web browser initialized
+2022-03-29 12:35:07,972 TRACE [TestNG-tests-1] LogTest:34 - browser opened
+2022-03-29 12:35:09,062  INFO [TestNG-tests-1] LogTest:40 - Manager login
+2022-03-29 12:35:10,104  INFO [TestNG-tests-1] LogTest:61 - customer added
+2022-03-29 12:35:10,288  INFO [TestNG-tests-1] LogTest:61 - customer added
+2022-03-29 12:35:11,210  INFO [TestNG-tests-1] LogTest:82 - customer account created
+2022-03-29 12:35:11,708  INFO [TestNG-tests-1] LogTest:82 - customer account created
+2022-03-29 12:35:11,862  INFO [TestNG-tests-1] LogTest:33 - web browser initialized
+2022-03-29 12:35:11,863 TRACE [TestNG-tests-1] LogTest:34 - browser opened
+2022-03-29 12:35:11,928  INFO [TestNG-tests-1] LogTest:40 - Manager login
+2022-03-29 12:35:12,212  INFO [TestNG-tests-1] LogTest:61 - customer added
+2022-03-29 12:35:12,797  INFO [TestNG-tests-1] LogTest:118 - Customer Abhishek Kumar is available
+2022-03-29 12:35:12,978  INFO [TestNG-tests-1] LogTest:33 - web browser initialized
+2022-03-29 12:35:12,978 TRACE [TestNG-tests-1] LogTest:34 - browser opened
+2022-03-29 12:35:13,046  INFO [TestNG-tests-1] LogTest:40 - Manager login
+2022-03-29 12:35:13,356  INFO [TestNG-tests-1] LogTest:61 - customer added
+2022-03-29 12:35:13,626  INFO [TestNG-tests-1] LogTest:118 - Customer Aman Sahu is available
